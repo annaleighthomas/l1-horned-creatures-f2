@@ -7,10 +7,10 @@ class Header extends Component {
     return (
       <header className="Header">
 
-        <img className="logo" alt="creature logo" src=""/>
+        <img className="logo" alt="creature logo" src="https://vignette.wikia.nocookie.net/landbeforetime/images/c/c3/Cera_infobox.png/revision/latest?cb=20180422005003"/>
 
         <h1>Horned Creatures</h1>
-
+        
       </header>
     );
   }
