@@ -10,13 +10,17 @@ import Footer from './Footer';
 
 class App extends Component {
 
+  handleSearch = (search) => {
+    console.log(search);
+  }
+
   render() {
     return (
       <div className="App">
   
         <Header/>
 
-        <CreatureSearch/>
+        <CreatureSearch onSearch={this.handleSearch}/>
 
         <main>
           <CreatureList creatures={creatures}/>
