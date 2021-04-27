@@ -5,11 +5,11 @@ export default class CreatureSearch extends Component {
 
   state = { nameSearch: '', sortField: '' }
 
-  handleNameChange = ({ target }) => {
+  handleNameFilter = ({ target }) => {
     this.setState({ nameSearch: target.value });
   }
 
-  handleSearchChange = ({ target }) => {
+  handleSortFilter = ({ target }) => {
     this.setState({ sortField: target.value });
   }
 
@@ -17,9 +17,14 @@ export default class CreatureSearch extends Component {
     e.preventDefault();
     this.props.onSearch(this.state);
   }
+
+  componentDidCatch(prevProp, prevState) {
+    if (prevState !== this.state) {
+      this.props.onSearch(this.state);
+    }
+  }
   
   render() {
-
     const { nameSearch, sortField } = this.state;
 
     return (
@@ -29,13 +34,13 @@ export default class CreatureSearch extends Component {
           placeholder="horned creatures" 
           name="nameSearch" 
           value={nameSearch} 
-          onChange={this.handleNameChange}
+          onChange={this.handleNameFilter}
         />
 
         <select 
           name="nameSearch"
           value={sortField}
-          onChange={this.handleSearchChange}
+          onChange={this.handleSortFilter}
         />
 
         <select>
