@@ -8,12 +8,12 @@ import Footer from './Footer';
 import './App.css';
 
 
-
 class App extends Component {
+
   state = { creatures: creatures }
 
-  handleSearch = ({ nameFilter, sortField }) => {
-    const nameRegex = new RegExp(nameFilter, 'i');
+  handleSearch = ({ nameSearch, sortField }) => {
+    const nameRegex = new RegExp(nameSearch, 'i');
 
     const searchedData = creatures
       .filter(creature => {
