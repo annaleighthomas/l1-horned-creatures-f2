@@ -38,12 +38,11 @@ export default class CreatureSearch extends Component {
         />
 
         <select 
-          name="nameSearch"
+          name="sortField"
           value={sortField}
           onChange={this.handleSortFilter}
-        />
+        >
 
-        <select>
           <option value="">sort...</option>
           <option value="title">by name</option>
           <option value="horns">by horns</option>
