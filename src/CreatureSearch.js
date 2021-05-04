@@ -18,7 +18,7 @@ export default class CreatureSearch extends Component {
     this.props.onSearch(this.state);
   }
 
-  componentDidCatch(prevProp, prevState) {
+  componentDidUpdate(prevProp, prevState) {
     if (prevState !== this.state) {
       this.props.onSearch(this.state);
     }

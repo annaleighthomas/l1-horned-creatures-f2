@@ -5,8 +5,10 @@ import CreatureSearch from './CreatureSearch';
 import CreatureList from './CreatureList';
 import creatures from './creatures-data';
 import Footer from './Footer';
+import request from 'superagent';
 import './App.css';
 
+const CREATURES_DATA = 'https://back-end-setup-l6-f2.herokuapp.com/data/creatures/';
 
 class App extends Component {
 
@@ -26,6 +28,13 @@ class App extends Component {
       });
 
     this.setState({ creatures: searchedData });
+  }
+
+  async componentDidMount() {
+    //this is where i called API 
+    const response = await request.get(CREATURES_DATA);
+    this.setState({ creatures: response.body });
+    //this is where i set my state and named it 'pokemonData'
   }
 
   render() {
